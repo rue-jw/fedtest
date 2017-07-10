@@ -2,59 +2,30 @@ package com.ruelala.returns.api.object;
 
 import java.util.List;
 
-public class Item {
-    private int itemId;
-    private String sku;
-    private String upc;
-    private String name;
-    private int productCategory;
-    private List<Object> variants;
+public interface Item {
 
-    public int getItemId() {
-        return itemId;
-    }
+    int getItemId();
 
-    public void setItemId(int itemId) {
-        this.itemId = itemId;
-    }
+    void setItemId(int itemId);
 
-    public String getSku() {
-        return sku;
-    }
+    String getSku();
 
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
+    void setSku(String sku);
 
-    public String getUpc() {
-        return upc;
-    }
+    String getUpc();
 
-    public void setUpc(String upc) {
-        this.upc = upc;
-    }
+    void setUpc(String upc);
 
-    public String getName() {
-        return name;
-    }
+    String getName();
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    void setName(String name);
 
-    public int getProductCategory() {
-        return productCategory;
-    }
+    int getProductCategory();
 
-    public void setProductCategory(int productCategory) {
-        this.productCategory = productCategory;
-    }
+    void setProductCategory(int productCategory);
 
-    public List<Object> getVariants() {
-        return variants;
-    }
+    List<Object> getVariants();
 
-    public void setVariants(List<Object> variants) {
-        this.variants = variants;
-    }
+    void setVariants(List<Object> variants);
+
 }
