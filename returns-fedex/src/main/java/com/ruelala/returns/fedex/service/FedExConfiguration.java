@@ -32,4 +32,9 @@ public class FedExConfiguration {
         return "Uk1TMTA0NTNSdTVMMUwxNzIwMTcwNzA2";
     }
 
+    public String getHost() {
+        // TODO Auto-generated method stub
+        return "api-sandbox.supplychain.fedex.com";
+    }
+
 }
