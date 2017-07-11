@@ -1,4 +1,4 @@
-package com.ruelala.returns.fedex.dto;
+package com.ruelala.returns.fedex.dto.item;
 
 import java.util.List;
 
@@ -11,7 +11,9 @@ public class Item {
     private String sku;
     private String upc;
     private String name;
+    private int quantity;
     private int productCategory;
+    private ReturnItemInfo returnItemInfo;
     private List<Object> variants;
 
     public int getItemId() {
@@ -46,12 +48,28 @@ public class Item {
         this.name = name;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public int getProductCategory() {
         return productCategory;
     }
 
     public void setProductCategory(int productCategory) {
         this.productCategory = productCategory;
+    }
+
+    public ReturnItemInfo getReturnItemInfo() {
+        return returnItemInfo;
+    }
+
+    public void setReturnItemInfo(ReturnItemInfo returnItemInfo) {
+        this.returnItemInfo = returnItemInfo;
     }
 
     public List<Object> getVariants() {
@@ -64,7 +82,7 @@ public class Item {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
+        final StringBuilder builder = new StringBuilder();
         builder.append("ItemDto [itemId=").append(itemId).append(", sku=").append(sku).append(", upc=").append(upc).append(", name=").append(name)
                 .append(", productCategory=").append(productCategory).append(", variants=").append(variants).append("]");
         return builder.toString();

@@ -1,4 +1,4 @@
-package com.ruelala.returns.fedex.dto;
+package com.ruelala.returns.fedex.dto.item;
 
 public class ItemRequest {
     private Item item;

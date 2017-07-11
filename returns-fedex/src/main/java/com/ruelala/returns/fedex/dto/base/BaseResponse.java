@@ -1,10 +1,13 @@
-package com.ruelala.returns.fedex.dto;
+package com.ruelala.returns.fedex.dto.base;
 
-public class BaseResponse {
+import java.util.List;
 
-    private String requestIdentifier;
-    private String transactionDate;
-    private boolean success = false;
+public abstract class BaseResponse {
+
+    protected String requestIdentifier;
+    protected String transactionDate;
+    protected boolean success = false;
+    protected List<ApiError> errors;
 
     public String getRequestIdentifier() {
         return requestIdentifier;
@@ -29,13 +32,13 @@ public class BaseResponse {
     public void setSuccess(boolean success) {
         this.success = success;
     }
-    
-    @Override
-    public String toString() {
-        final StringBuilder builder = new StringBuilder();
-        builder.append("BaseResponse [requestIdentifier=").append(requestIdentifier).append(", transactionDate=").append(transactionDate).append(", success=")
-        .append(success).append("]");
-        return builder.toString();
+
+    public List<ApiError> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<ApiError> errors) {
+        this.errors = errors;
     }
 
 }

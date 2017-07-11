@@ -8,7 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ruelala.returns.fedex.dto.Item;
+import com.ruelala.returns.fedex.dto.item.Item;
 import com.ruelala.returns.fedex.service.FedExApiFactory;
 import com.ruelala.returns.fedex.service.FedExConfiguration;
 import com.ruelala.returns.fedex.service.FedExService;
