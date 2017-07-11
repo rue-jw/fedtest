@@ -7,38 +7,50 @@
     <version>1.0-SNAPSHOT</version>
     <name>returns-fedex</name>
     <url>http://maven.apache.org</url>
+    
+    <properties>
+        <feign.version>9.3.1</feign.version>
+        <spring.version>2.5.6</spring.version>
+        <junit.version>4.12</junit.version>
+        <logback.version>1.2.3</logback.version>
+    </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.ruelala</groupId>
+            <artifactId>returns-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>2.5.6</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-httpclient</artifactId>
-            <version>9.3.1</version>
+            <version>${feign.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-gson</artifactId>
-            <version>9.3.1</version>
+            <version>${feign.version}</version>
         </dependency>
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-slf4j</artifactId>
-            <version>9.3.1</version>
+            <version>${feign.version}</version>
         </dependency>
         <!-- testing -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
+            <version>${logback.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

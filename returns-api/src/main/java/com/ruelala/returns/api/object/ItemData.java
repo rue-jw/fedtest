@@ -2,7 +2,7 @@ package com.ruelala.returns.api.object;
 
 import java.util.List;
 
-public interface Item {
+public interface ItemData {
 
     int getItemId();
 
