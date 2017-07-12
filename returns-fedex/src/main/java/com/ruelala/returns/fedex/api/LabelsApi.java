@@ -2,6 +2,8 @@ package com.ruelala.returns.fedex.api;
 
 import java.io.File;
 
+import com.ruelala.returns.fedex.dto.label.LabelsListResponse;
+
 import feign.Headers;
 import feign.Param;
 import feign.RequestLine;
@@ -16,9 +18,9 @@ public interface LabelsApi {
      * 
      * @return
      */
-    @RequestLine("GET /s{labelId}")
+    @RequestLine("GET /{labelId}")
     @Headers(value={"Accept: application/json"})
-    public Object findLabel(@Param("labelId") String labelId);
+    public LabelsListResponse findLabel(@Param("labelId") Long labelId);
 
     /**
      * Retrieves Label information as binary PDF document.
@@ -28,6 +30,6 @@ public interface LabelsApi {
      */
     @RequestLine("GET /{labelId}")
     @Headers(value={"Accept: application/pdf"})
-    public File findLabelPdf(@Param("labelId") String labelId);
+    public File findLabelPdf(@Param("labelId") Long labelId);
     
 }

@@ -1,14 +1,16 @@
 package com.ruelala.returns.fedex.dto.rma;
 
-import java.math.BigInteger;
+import java.math.BigDecimal;
 import java.util.List;
+
+import com.ruelala.returns.fedex.dto.label.Label;
 
 public class Rma {
     private String rmaId;
     private String rmaNumber;
     private String status;
     private String shippingService;
-    private BigInteger shippingCost;
+    private BigDecimal shippingCost;
     //private String returnEmployeeName; //not needed?
     private String shippingCostResponsibility;
     private Customer customer;
@@ -54,11 +56,11 @@ public class Rma {
         this.shippingService = shippingService;
     }
 
-    public BigInteger getShippingCost() {
+    public BigDecimal getShippingCost() {
         return shippingCost;
     }
 
-    public void setShippingCost(BigInteger shippingCost) {
+    public void setShippingCost(BigDecimal shippingCost) {
         this.shippingCost = shippingCost;
     }
 

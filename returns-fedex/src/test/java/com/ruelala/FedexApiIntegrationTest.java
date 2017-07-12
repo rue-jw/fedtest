@@ -1,23 +1,29 @@
 package com.ruelala;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ruelala.returns.api.object.LabelData;
 import com.ruelala.returns.fedex.dto.item.Item;
+import com.ruelala.returns.fedex.dto.label.LabelDtoFactory;
 import com.ruelala.returns.fedex.dto.rma.Rma;
-import com.ruelala.returns.fedex.service.FedExConfiguration;
+import com.ruelala.returns.fedex.dto.rma.RmaDtoFactory;
 import com.ruelala.returns.fedex.service.FedExService;
 import com.ruelala.returns.fedex.service.FeignFedExApiFactory;
+import com.ruelala.returns.fedex.service.TestFedExConfiguration;
 
 /**
  * Unit test for simple App.
  */
-public class FedexApiTest {
+public class FedexApiIntegrationTest {
     /*
      * Item
      */
@@ -32,12 +38,17 @@ public class FedexApiTest {
     private static final String EXISTS_RMA_NUMBER = "FX100000996";
     private static final String RMA_CUSTOMER_ADDRESSLINE1 = "1911 Shipaddy Ct";
     private static final String RMA_ORDER_NUMBER = "RMS-1451-03";
+    private static final Long EXISTS_LABEL_ID = 5300l;
 
     private FedExService fedex;
 
     @Before
     public void before() {
-        fedex = new FedExService(new FeignFedExApiFactory(new FedExConfiguration()));
+        this.fedex = new FedExService(
+                new FeignFedExApiFactory(new TestFedExConfiguration()),
+                        new RmaDtoFactory(),
+                        new LabelDtoFactory()
+                );
     }
 
     @After
@@ -61,5 +72,15 @@ public class FedexApiTest {
         assertThat(rma.getRmaNumber(), is(equalTo(EXISTS_RMA_NUMBER)));
         assertThat(rma.getCustomer().getAddressLine1(), is(equalTo(RMA_CUSTOMER_ADDRESSLINE1)));
         assertThat(rma.getOrders().get(0).getOrderNumber(), is(equalTo(RMA_ORDER_NUMBER)));
+    }
+    
+    @Test
+    public void testRetrieveLabel() {
+        final LabelData label = fedex.fetchLabelById(EXISTS_LABEL_ID);
+        
+        //assertThat(label.getId(), is(equalTo(EXISTS_LABEL_ID.toString())));
+        assertThat(label.getMimeType(), is(equalTo("application/pdf")));
+        assertThat(label.getLabelContent(), is(not(nullValue())));
+        assertThat(label.getLabelContent().length, is(greaterThan(1000)));
     }
 }

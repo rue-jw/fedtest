@@ -7,20 +7,20 @@ import java.util.List;
  *
  */
 public class Item {
-    private int itemId;
+    private Long itemId;
     private String sku;
     private String upc;
     private String name;
-    private int quantity;
-    private int productCategory;
+    private Integer quantity;
+    private Integer productCategory;
     private ReturnItemInfo returnItemInfo;
     private List<Object> variants;
 
-    public int getItemId() {
+    public Long getItemId() {
         return itemId;
     }
 
-    public void setItemId(int itemId) {
+    public void setItemId(Long itemId) {
         this.itemId = itemId;
     }
 
@@ -48,19 +48,19 @@ public class Item {
         this.name = name;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public int getProductCategory() {
+    public Integer getProductCategory() {
         return productCategory;
     }
 
-    public void setProductCategory(int productCategory) {
+    public void setProductCategory(Integer productCategory) {
         this.productCategory = productCategory;
     }
 
