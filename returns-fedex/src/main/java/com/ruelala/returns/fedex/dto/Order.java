@@ -1,8 +1,6 @@
-package com.ruelala.returns.fedex.dto.rma;
+package com.ruelala.returns.fedex.dto;
 
 import java.util.List;
-
-import com.ruelala.returns.fedex.dto.item.Item;
 
 public class Order {
     private String orderNumber;

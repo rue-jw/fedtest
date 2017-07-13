@@ -1,10 +1,10 @@
 package com.ruelala.returns.fedex.api;
 
-import com.ruelala.returns.fedex.dto.rma.CancelRmaRequest;
-import com.ruelala.returns.fedex.dto.rma.Rma;
-import com.ruelala.returns.fedex.dto.rma.RmaListResponse;
-import com.ruelala.returns.fedex.dto.rma.RmaResponse;
-import com.ruelala.returns.fedex.dto.rma.RmasListResponse;
+import com.ruelala.returns.fedex.dto.CancelRmaRequest;
+import com.ruelala.returns.fedex.dto.Rma;
+import com.ruelala.returns.fedex.dto.RmaListResponse;
+import com.ruelala.returns.fedex.dto.RmaResponse;
+import com.ruelala.returns.fedex.dto.RmasListResponse;
 
 import feign.Headers;
 import feign.Param;

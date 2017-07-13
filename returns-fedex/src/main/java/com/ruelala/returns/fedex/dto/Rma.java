@@ -1,9 +1,7 @@
-package com.ruelala.returns.fedex.dto.rma;
+package com.ruelala.returns.fedex.dto;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import com.ruelala.returns.fedex.dto.label.Label;
 
 public class Rma {
     private String rmaId;

@@ -1,8 +1,8 @@
 package com.ruelala.returns.fedex.api;
 
-import com.ruelala.returns.fedex.dto.item.ItemRequest;
-import com.ruelala.returns.fedex.dto.item.ItemResponse;
-import com.ruelala.returns.fedex.dto.item.ItemsListResponse;
+import com.ruelala.returns.fedex.dto.ItemRequest;
+import com.ruelala.returns.fedex.dto.ItemResponse;
+import com.ruelala.returns.fedex.dto.ItemsListResponse;
 
 import feign.Headers;
 import feign.Param;

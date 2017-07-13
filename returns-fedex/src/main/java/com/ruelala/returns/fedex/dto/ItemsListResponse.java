@@ -1,4 +1,4 @@
-package com.ruelala.returns.fedex.dto.item;
+package com.ruelala.returns.fedex.dto;
 
 import java.util.List;
 

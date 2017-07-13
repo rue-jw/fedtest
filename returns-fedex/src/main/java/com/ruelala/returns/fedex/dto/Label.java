@@ -1,4 +1,4 @@
-package com.ruelala.returns.fedex.dto.label;
+package com.ruelala.returns.fedex.dto;
 
 public class Label {
 //    private Long id;

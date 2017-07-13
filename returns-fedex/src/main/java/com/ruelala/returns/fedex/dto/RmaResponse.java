@@ -1,28 +1,27 @@
-package com.ruelala.returns.fedex.dto.rma;
-
-import java.util.List;
+package com.ruelala.returns.fedex.dto;
 
 import com.ruelala.returns.fedex.dto.base.BaseResponse;
 
-public class RmaListResponse extends BaseResponse {
+public class RmaResponse extends BaseResponse {
 
-    private List<Rma> rma;
+    private Rma rma;
 
-    public RmaListResponse() {
+    public RmaResponse() {
+        // Default constructor
     }
 
-    public List<Rma> getRma() {
+    public Rma getRma() {
         return rma;
     }
 
-    public void setRma(List<Rma> rma) {
+    public void setRma(Rma rma) {
         this.rma = rma;
     }
 
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
-        builder.append("RmaListResponse [rma=").append(rma).append(", requestIdentifier=").append(requestIdentifier).append(", transactionDate=")
+        builder.append("RmaResponse [rma=").append(rma).append(", requestIdentifier=").append(requestIdentifier).append(", transactionDate=")
                 .append(transactionDate).append(", success=").append(success).append(", errors=").append(errors).append("]");
         return builder.toString();
     }

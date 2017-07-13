@@ -2,7 +2,7 @@ package com.ruelala.returns.fedex.api;
 
 import java.io.File;
 
-import com.ruelala.returns.fedex.dto.label.LabelsListResponse;
+import com.ruelala.returns.fedex.dto.LabelsListResponse;
 
 import feign.Headers;
 import feign.Param;

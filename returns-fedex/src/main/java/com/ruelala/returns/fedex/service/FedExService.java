@@ -8,16 +8,16 @@ import com.ruelala.returns.fedex.api.ItemsApi;
 import com.ruelala.returns.fedex.api.LabelsApi;
 import com.ruelala.returns.fedex.api.ReceiptsApi;
 import com.ruelala.returns.fedex.api.RmasApi;
-import com.ruelala.returns.fedex.dto.item.Item;
-import com.ruelala.returns.fedex.dto.item.ItemRequest;
-import com.ruelala.returns.fedex.dto.item.ItemResponse;
-import com.ruelala.returns.fedex.dto.item.ItemsListResponse;
-import com.ruelala.returns.fedex.dto.label.LabelDtoFactory;
-import com.ruelala.returns.fedex.dto.label.LabelsListResponse;
-import com.ruelala.returns.fedex.dto.rma.Rma;
-import com.ruelala.returns.fedex.dto.rma.RmaDtoFactory;
-import com.ruelala.returns.fedex.dto.rma.RmaListResponse;
-import com.ruelala.returns.fedex.dto.rma.RmasListResponse;
+import com.ruelala.returns.fedex.dto.Item;
+import com.ruelala.returns.fedex.dto.ItemRequest;
+import com.ruelala.returns.fedex.dto.ItemResponse;
+import com.ruelala.returns.fedex.dto.ItemsListResponse;
+import com.ruelala.returns.fedex.dto.LabelsListResponse;
+import com.ruelala.returns.fedex.dto.Rma;
+import com.ruelala.returns.fedex.dto.RmaListResponse;
+import com.ruelala.returns.fedex.dto.RmasListResponse;
+import com.ruelala.returns.fedex.dto.factory.LabelDtoFactory;
+import com.ruelala.returns.fedex.dto.factory.RmaDtoFactory;
 
 @Service
 public class FedExService {

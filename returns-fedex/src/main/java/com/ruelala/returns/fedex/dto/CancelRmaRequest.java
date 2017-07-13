@@ -1,4 +1,4 @@
-package com.ruelala.returns.fedex.dto.rma;
+package com.ruelala.returns.fedex.dto;
 
 import com.ruelala.returns.fedex.dto.base.CustomerId;
 import com.ruelala.returns.fedex.dto.base.CustomerIdEntity;

@@ -1,4 +1,4 @@
-package com.ruelala.returns.fedex.dto.rma;
+package com.ruelala.returns.fedex.dto;
 
 public class Customer {
     private String firstName;

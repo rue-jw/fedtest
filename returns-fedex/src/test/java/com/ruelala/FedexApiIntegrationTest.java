@@ -12,10 +12,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.ruelala.returns.api.object.LabelData;
-import com.ruelala.returns.fedex.dto.item.Item;
-import com.ruelala.returns.fedex.dto.label.LabelDtoFactory;
-import com.ruelala.returns.fedex.dto.rma.Rma;
-import com.ruelala.returns.fedex.dto.rma.RmaDtoFactory;
+import com.ruelala.returns.fedex.dto.Item;
+import com.ruelala.returns.fedex.dto.Rma;
+import com.ruelala.returns.fedex.dto.factory.LabelDtoFactory;
+import com.ruelala.returns.fedex.dto.factory.RmaDtoFactory;
 import com.ruelala.returns.fedex.service.FedExService;
 import com.ruelala.returns.fedex.service.FeignFedExApiFactory;
 import com.ruelala.returns.fedex.service.TestFedExConfiguration;

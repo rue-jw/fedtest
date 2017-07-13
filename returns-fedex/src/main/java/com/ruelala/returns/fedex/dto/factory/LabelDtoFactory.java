@@ -1,6 +1,8 @@
-package com.ruelala.returns.fedex.dto.label;
+package com.ruelala.returns.fedex.dto.factory;
 
 import com.ruelala.returns.api.object.LabelData;
+import com.ruelala.returns.fedex.dto.Label;
+import com.ruelala.returns.fedex.dto.LabelsListResponse;
 
 public class LabelDtoFactory {
 
