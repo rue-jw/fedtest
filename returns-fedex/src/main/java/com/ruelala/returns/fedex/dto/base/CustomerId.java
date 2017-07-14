@@ -1,7 +1,7 @@
 package com.ruelala.returns.fedex.dto.base;
 
 public class CustomerId {
-    private String id;
+    protected String id;
 
     public CustomerId() {
     }

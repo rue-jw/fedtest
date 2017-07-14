@@ -16,7 +16,9 @@ import com.ruelala.returns.fedex.dto.Item;
 import com.ruelala.returns.fedex.dto.Rma;
 import com.ruelala.returns.fedex.dto.factory.LabelDtoFactory;
 import com.ruelala.returns.fedex.dto.factory.RmaDtoFactory;
+import com.ruelala.returns.fedex.service.FedExConfigurationProvider;
 import com.ruelala.returns.fedex.service.FedExService;
+import com.ruelala.returns.fedex.service.FedexConfigurationProvider;
 import com.ruelala.returns.fedex.service.FeignFedExApiFactory;
 import com.ruelala.returns.fedex.service.TestFedExConfiguration;
 
@@ -44,11 +46,12 @@ public class FedexApiIntegrationTest {
 
     @Before
     public void before() {
+        final FedExConfigurationProvider config = new TestFedExConfiguration();
+
         this.fedex = new FedExService(
-                new FeignFedExApiFactory(new TestFedExConfiguration()),
-                        new RmaDtoFactory(),
-                        new LabelDtoFactory()
-                );
+                new FeignFedExApiFactory(config),
+                new RmaDtoFactory(config),
+                new LabelDtoFactory());
     }
 
     @After
@@ -59,7 +62,7 @@ public class FedexApiIntegrationTest {
     @Test
     public void testRetrieveItem() {
         final Item item = fedex.findItem(TEST_SKU);
-        
+
         assertThat(item.getUpc(), is(equalTo(TEST_UPC)));
         assertThat(item.getName(), is(equalTo(TEST_NAME)));
     }
@@ -67,18 +70,23 @@ public class FedexApiIntegrationTest {
     @Test
     public void testRetrieveRma() {
         final Rma rma = fedex.findRma(EXISTS_RMA_ID);
-        
+
         assertThat(rma.getRmaId(), is(equalTo(EXISTS_RMA_ID)));
         assertThat(rma.getRmaNumber(), is(equalTo(EXISTS_RMA_NUMBER)));
         assertThat(rma.getCustomer().getAddressLine1(), is(equalTo(RMA_CUSTOMER_ADDRESSLINE1)));
         assertThat(rma.getOrders().get(0).getOrderNumber(), is(equalTo(RMA_ORDER_NUMBER)));
     }
-    
+
+    @Test
+    public void testCreateRma() {
+        final 
+    }
+
     @Test
     public void testRetrieveLabel() {
         final LabelData label = fedex.fetchLabelById(EXISTS_LABEL_ID);
-        
-        //assertThat(label.getId(), is(equalTo(EXISTS_LABEL_ID.toString())));
+
+        // assertThat(label.getId(), is(equalTo(EXISTS_LABEL_ID.toString())));
         assertThat(label.getMimeType(), is(equalTo("application/pdf")));
         assertThat(label.getLabelContent(), is(not(nullValue())));
         assertThat(label.getLabelContent().length, is(greaterThan(1000)));

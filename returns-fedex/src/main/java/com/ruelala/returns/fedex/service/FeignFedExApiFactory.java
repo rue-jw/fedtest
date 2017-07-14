@@ -16,9 +16,9 @@ import feign.slf4j.Slf4jLogger;
 public class FeignFedExApiFactory implements FedExApiFactory {
     private static final Logger.Level API_LOGGING_LEVEL = Logger.Level.FULL;
 
-    private final FedexConfigurationProvider config;
+    private final FedExConfigurationProvider config;
 
-    public FeignFedExApiFactory(FedexConfigurationProvider config) {
+    public FeignFedExApiFactory(FedExConfigurationProvider config) {
         super();
         this.config = config;
     }

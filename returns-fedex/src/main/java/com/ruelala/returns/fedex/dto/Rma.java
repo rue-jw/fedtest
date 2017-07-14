@@ -9,7 +9,7 @@ public class Rma {
     private String status;
     private String shippingService;
     private BigDecimal shippingCost;
-    //private String returnEmployeeName; //not needed?
+    // Possible values: 'Consumer', 'Retailer' 
     private String shippingCostResponsibility;
     private Customer customer;
     private Boolean labelRequired;

@@ -4,7 +4,7 @@ import com.ruelala.returns.api.object.LabelData;
 import com.ruelala.returns.fedex.dto.Label;
 import com.ruelala.returns.fedex.dto.LabelsListResponse;
 
-public class LabelDtoFactory {
+public class LabelResponseConverter {
 
     private static final String DEFAULT_LABEL_MIME_TYPE = "application/pdf";
     

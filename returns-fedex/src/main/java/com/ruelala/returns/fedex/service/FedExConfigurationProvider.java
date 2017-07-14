@@ -1,6 +1,6 @@
 package com.ruelala.returns.fedex.service;
 
-public interface FedexConfigurationProvider {
+public interface FedExConfigurationProvider {
 
     /**
      * URI for Items API

@@ -1,8 +1,6 @@
-package com.ruelala.returns.fedex.dto;
+package com.ruelala.returns.api.object;
 
-import com.ruelala.returns.fedex.dto.base.CustomerId;
-
-public class Customer extends CustomerId {
+public class ReturnAddress {
     private String firstName;
     private String lastName;
     private String addressLine1;
@@ -14,8 +12,21 @@ public class Customer extends CustomerId {
     private String phoneNumber;
     private String emailAddress;
 
-    public Customer() {
-        // Default constructor
+    public ReturnAddress() {
+    }
+
+    public ReturnAddress(String firstName, String lastName, String addressLine1, String addressLine2, String city, String stateCode, String zipCode,
+            String countryCode, String phoneNumber, String emailAddress) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.addressLine1 = addressLine1;
+        this.addressLine2 = addressLine2;
+        this.city = city;
+        this.stateCode = stateCode;
+        this.zipCode = zipCode;
+        this.countryCode = countryCode;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
     }
 
     public String getFirstName() {
@@ -101,10 +112,10 @@ public class Customer extends CustomerId {
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
-        builder.append("Customer [firstName=").append(firstName).append(", lastName=").append(lastName).append(", addressLine1=").append(addressLine1)
+        builder.append("ReturnAddress [firstName=").append(firstName).append(", lastName=").append(lastName).append(", addressLine1=").append(addressLine1)
                 .append(", addressLine2=").append(addressLine2).append(", city=").append(city).append(", stateCode=").append(stateCode).append(", zipCode=")
                 .append(zipCode).append(", countryCode=").append(countryCode).append(", phoneNumber=").append(phoneNumber).append(", emailAddress=")
-                .append(emailAddress).append(", id=").append(id).append("]");
+                .append(emailAddress).append("]");
         return builder.toString();
     }
 

@@ -1,6 +1,6 @@
 package com.ruelala.returns.fedex.service;
 
-public class TestFedExConfiguration implements FedexConfigurationProvider {
+public class TestFedExConfiguration implements FedExConfigurationProvider {
 
     @Override
     public String getItemsBaseAddress() {
