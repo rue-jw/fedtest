@@ -74,7 +74,7 @@ public class FedExService {
     /* RMAS */
 
     public ReturnResponse createRma(ReturnRequest returnRequest) {
-        final Rma rma = rmaRequestConverter.createRequest(returnRequest);
+        final Rma rma = rmaRequestConverter.toRma(returnRequest);
         final RmasListResponse response = rmasApi.createRma(rma);
 
         return rmaResponseConverter.toReturnResponse(response);

@@ -6,8 +6,6 @@ public class ReturnItem {
     private String returnReason;
     private Boolean returnEligibilityOverride;
     private Boolean finalSale;
-    // Possible values: 'AC', 'DNC', 'GR', and null 
-    private String advanceCreditCode;
 
     public ReturnItem() {
     }
@@ -26,7 +24,6 @@ public class ReturnItem {
         this.returnReason = returnReason;
         this.returnEligibilityOverride = returnEligibilityOverride;
         this.finalSale = finalSale;
-        this.advanceCreditCode = advanceCreditCode;
     }
 
     public String getSku() {
@@ -69,20 +66,11 @@ public class ReturnItem {
         this.finalSale = finalSale;
     }
 
-    public String getAdvanceCreditCode() {
-        return advanceCreditCode;
-    }
-
-    public void setAdvanceCreditCode(String advanceCreditCode) {
-        this.advanceCreditCode = advanceCreditCode;
-    }
-
     @Override
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append("ReturnItem [sku=").append(sku).append(", quantity=").append(quantity).append(", returnReason=").append(returnReason)
-                .append(", returnEligibilityOverride=").append(returnEligibilityOverride).append(", finalSale=").append(finalSale)
-                .append(", advanceCreditCode=").append(advanceCreditCode).append("]");
+                .append(", returnEligibilityOverride=").append(returnEligibilityOverride).append(", finalSale=").append(finalSale).append("]");
         return builder.toString();
     }
 

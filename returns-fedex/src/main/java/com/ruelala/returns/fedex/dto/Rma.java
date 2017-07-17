@@ -9,12 +9,14 @@ public class Rma {
     private String status;
     private String shippingService;
     private BigDecimal shippingCost;
-    // Possible values: 'Consumer', 'Retailer' 
+    // Possible values: 'Consumer', 'Retailer'
     private String shippingCostResponsibility;
     private Customer customer;
     private Boolean labelRequired;
     private Boolean emailNotification;
     private String shipToAddressId;
+    private String shipToAddressName;
+    private String specialtyFlag;
     private List<Order> orders;
     private Label label;
 
@@ -102,6 +104,22 @@ public class Rma {
         this.shipToAddressId = shipToAddressId;
     }
 
+    public String getShipToAddressName() {
+        return shipToAddressName;
+    }
+
+    public void setShipToAddressName(String shipToAddressName) {
+        this.shipToAddressName = shipToAddressName;
+    }
+
+    public String getSpecialtyFlag() {
+        return specialtyFlag;
+    }
+
+    public void setSpecialtyFlag(String specialtyFlag) {
+        this.specialtyFlag = specialtyFlag;
+    }
+
     public List<Order> getOrders() {
         return orders;
     }
@@ -124,8 +142,10 @@ public class Rma {
         builder.append("Rma [rmaId=").append(rmaId).append(", rmaNumber=").append(rmaNumber).append(", status=").append(status).append(", shippingService=")
                 .append(shippingService).append(", shippingCost=").append(shippingCost).append(", shippingCostResponsibility=")
                 .append(shippingCostResponsibility).append(", customer=").append(customer).append(", labelRequired=").append(labelRequired)
-                .append(", emailNotification=").append(emailNotification).append(", shipToAddressId=").append(shipToAddressId).append(", orders=")
-                .append(orders).append(", label=").append(label).append("]");
+                .append(", emailNotification=").append(emailNotification).append(", shipToAddressId=").append(shipToAddressId).append(", shipToAddressName=")
+                .append(shipToAddressName).append(", specialtyFlag=").append(specialtyFlag).append(", orders=").append(orders).append(", label=").append(label)
+                .append("]");
         return builder.toString();
     }
+
 }

@@ -25,7 +25,7 @@ public class RmaRequestConverter {
         this.config = config;
     }
 
-    public Rma createRequest(ReturnRequest returnRequest) {
+    public Rma toRma(ReturnRequest returnRequest) {
         final Rma rma = new Rma();
         
         rma.setRmaNumber(returnRequest.getRmaNumber());
@@ -35,6 +35,8 @@ public class RmaRequestConverter {
         rma.setShippingCostResponsibility(returnRequest.getShippingCostResponsibility());
         rma.setShipToAddressId(returnRequest.getVendorId());
         rma.setLabelRequired(LABEL_REQUIRED);
+        // Advance credit code goes to specialty flag.
+        rma.setSpecialtyFlag(returnRequest.getAdvanceCreditCode());
         
         return rma;
     }
@@ -76,8 +78,6 @@ public class RmaRequestConverter {
         rii.setReturnEligibilityOverride(returnItem.getReturnEligibilityOverride());
         rii.setReturnReason(returnItem.getReturnReason());
         rii.setFinalSale(returnItem.getFinalSale());
-        // Advance credit code goes to specialty flag.
-        rii.setSpecialtyFlag(returnItem.getAdvanceCreditCode());
         item.setReturnItemInfo(rii);
         
         return item;

@@ -8,13 +8,13 @@ public class ReturnResponse {
     private BigDecimal shippingCost;
     private String destinationId;
     private String destinationName;
-    private Integer labelId;
+    private String labelId;
     private String trackingNumber;
 
     public ReturnResponse() {
     }
 
-    public ReturnResponse(String rmaId, String rmaNumber, BigDecimal shippingCost, String destinationId, String destinationName, Integer labelId,
+    public ReturnResponse(String rmaId, String rmaNumber, BigDecimal shippingCost, String destinationId, String destinationName, String labelId,
             String trackingNumber) {
         super();
         this.rmaId = rmaId;
@@ -66,11 +66,11 @@ public class ReturnResponse {
         this.destinationName = destinationName;
     }
 
-    public Integer getLabelId() {
+    public String getLabelId() {
         return labelId;
     }
 
-    public void setLabelId(Integer labelId) {
+    public void setLabelId(String labelId) {
         this.labelId = labelId;
     }
 
